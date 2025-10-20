@@ -1,13 +1,17 @@
 "use client";
 
+import Paragraph from "@/components/paragraph";
+import SideCard from "@/components/side-card";
 import HeroText from "@/components/text";
 import { BriefcaseBusiness, MoveRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [visible, setVisible] = useState(true);
   const [heroContent, setHeroContent] = useState(false);
+  const constraint1Ref = useRef<HTMLDivElement | null>(null);
+  const constraint2Ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,14 +22,17 @@ export default function Home() {
   }, []);
   return (
     <div className="min-h-screen m-0 relative">
+
+      
       <AnimatePresence>
         {visible && (
           <motion.div
-            exit={{
-              opacity: 0,
-            }}
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 flex flex-col items-center"
+          exit={{
+            opacity: 0,
+          }}
+          className="h-screen fixed z-50 w-full"
           >
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 flex flex-col items-center">
             <h1 className="text-xl mb-6">404Tech - Creative Studio</h1>
             <motion.div
               key="loading-line"
@@ -35,6 +42,7 @@ export default function Home() {
               transition={{ duration: 1, ease: "easeInOut" }}
               className="h-[2px] bg-black origin-left rounded-full w-[70%]"
             />
+        </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -185,6 +193,33 @@ export default function Home() {
               background:"linear-gradient(270deg, #54545400 0%, #00000080, #00000080 100%)",
             }}
           />
+        </div>
+        <div className="w-3xl mx-auto mt-18 relative">
+          <Paragraph paragraph="We help brands grow with standout design, clear branding, and content that drives results."/>
+          <div className="absolute w-1/2 top-0 left-[-28%] h-96" ref={constraint1Ref}>
+            <SideCard
+            constraintsRef={constraint1Ref}
+            text="Development"
+            color="#FF5E00" className="absolute top-0 left-[18%] rotate-6"/>
+            <SideCard 
+             constraintsRef={constraint1Ref}
+            text="UI/UX Design" color="#474747" className="absolute top-16 left-[18%] rotate-2"/>
+            <SideCard 
+             constraintsRef={constraint1Ref}
+            text="Strategy" color="#05A9FF" className="absolute top-32 left-[20%] rotate-[-10deg]"/>
+          </div>
+
+          <div className="absolute w-1/2 top-0 right-[-28%] h-96" ref={constraint2Ref}>
+            <SideCard 
+             constraintsRef={constraint2Ref}
+            text="Animations" color="#52FF69" className="absolute top-0 right-[24%] rotate-[-6deg]"/>
+            <SideCard 
+             constraintsRef={constraint2Ref}
+            text="Backend" color="#FB44A9" className="absolute top-16 right-[26%] rotate-[-2deg]"/>
+            <SideCard 
+             constraintsRef={constraint2Ref}
+            text="Branding" color="#FED400" className="absolute top-32 right-[26%] rotate-[10deg]"/>
+          </div>
         </div>
       </div>
     </div>
