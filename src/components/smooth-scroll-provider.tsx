@@ -1,26 +1,29 @@
 // components/SmoothScrollProvider.jsx
-'use client';
+"use client";
 
-import React, { useEffect } from 'react';
-import Lenis from 'lenis';
+import React, { useEffect } from "react";
+import Lenis from "lenis";
 
 const SmoothScrollProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 2, 
-      easing: (t) => Math.min(1, 8.001 - Math.pow(2, -10 * t)), 
-    });
+    let lenis: Lenis | null = null;
+    const timeout = setTimeout(() => {
+      lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => 1 - Math.pow(1 - t, 3),
+        smoothWheel: true,
+      });
 
-    const animate = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(animate);
-    };
+      const raf = (time: number) => {
+        lenis!.raf(time);
+        requestAnimationFrame(raf);
+      };
+      requestAnimationFrame(raf);
+    }, 100); // wait a moment for layout
 
-    requestAnimationFrame(animate);
-
-    // Cleanup on component unmount
     return () => {
-      lenis.destroy();
+      clearTimeout(timeout);
+      lenis?.destroy();
     };
   }, []);
 

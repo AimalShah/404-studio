@@ -10,7 +10,7 @@ export default function Intro() {
     <div className="mt-48">
       <Heading text="Hello" />
 
-      <div className="w-3xl mx-auto mt-18 relative hidden lg:block md:block">
+      <div className="lg:h-[70vh] w-3xl mx-auto mt-18 relative hidden lg:block md:block">
         <Paragraph paragraph="We help brands grow with standout design, clear branding, and content that drives results." />
         <div
           className="absolute w-1/2 top-0 left-[-28%] h-96"

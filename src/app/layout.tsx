@@ -26,15 +26,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <SmoothScrollProvider>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
          cz-shortcut-listen="true"
       >
-        <SmoothScrollProvider>
           <Navbar />
           {children}
-        </SmoothScrollProvider>
       </body>
+        </SmoothScrollProvider>
     </html>
   );
 }

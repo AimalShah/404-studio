@@ -205,7 +205,7 @@ export default function Home() {
       {/* end-hero-div */}
 
       {/* VIDEO SECTION */}
-      <div className="h-screen w-full grid place-items-center py-6 mt-12 overflow-clip px-4 lg:px-0 md:px-0">
+      <div className="h-screen w-full grid place-items-center py-6 mt-12 overflow-clip px-4 lg:px-4 md:px-0">
         <div className="w-full h-full bg-black rounded-4xl grid place-items-center">
           <div className="size-24 rounded-full bg-white/80 grid place-items-center before:content-['see recent work'] relative ">
             <div className="w-42 absolute bg-white/75 top-[-50] p-2 rounded-full text-center rotate-12 translate-x-6">
@@ -221,8 +221,8 @@ export default function Home() {
       <div className="w-full">
         <Heading text="Our Process, Explained" />
         <div className="w-full">
-          <h1 className="text-2xl text-center mt-2 font-medium">Here's how it works</h1>
-          <div className="w-full px-4 mt-8 flex flex-col lg:flex-row md:flex-row lg:gap-4">
+          <h1 className="text-2xl lg:text-5xl lg:mt-4 text-center mt-2 font-medium">Here's how it works</h1>
+          <div className="w-7xl mx-auto px-4 mt-8 flex flex-col lg:flex-row md:flex-row lg:gap-4">
             {
               STEPS.map((item,index)=> (
                 <Card
@@ -251,7 +251,7 @@ function Card({
   return (
     <div className="w-full bg-gray-400/20 p-2 rounded-2xl mb-4">
       <div className="w-full bg-white h-full rounded-2xl py-2 px-6 shadow-2xl flex flex-col gap-4">
-        <span className="text-4xl font-semibold">{number}</span>
+        <span className="text-4xl lg:text-6xl lg:font-normal font-semibold lg:mb-32">{number}</span>
         <span className="text-xl font-semibold">{title}</span>
         <p className="font-light text-gray-400">{description}</p>
       </div>
