@@ -53,8 +53,8 @@ export default function Home() {
             }}
             className="h-screen fixed z-50 w-full"
           >
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 flex flex-col items-center">
-              <h1 className="text-xl mb-6">404Tech - Creative Studio</h1>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 flex flex-col items-center w-full text-center">
+              <h1 className="lg:text-xl  mb-6 w-full">404Tech - Creative Studio</h1>
               <motion.div
                 key="loading-line"
                 initial={{ scaleX: 0 }}
