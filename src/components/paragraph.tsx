@@ -17,7 +17,8 @@ export default function Paragraph({ paragraph }: { paragraph: string }) {
     <motion.p
       ref={container}
       style={{ opacity: scrollYProgress }}
-      className="mx-auto font-primary flex text-3xl text-center leading-[0.8] py-[40px] md:max-w-[100%] lg:max-w-[90%] xl:maw-w-[60%] sm:max-w-full text-black flex-wrap break-words tracking-wide justify-center"
+      className="mx-auto font-primary flex lg:text-3xl md:text-3xl text-2xl text-center leading-[0.8] py-[40px] md:max-w-[100%] lg:max-w-[90%] xl:maw-w-[60%] sm:max-w-full text-black flex-wrap break-words tracking-wide justify-center"
+
     >
       {words.map((word: string, i: number) => {
         const start = i / words.length;
@@ -35,7 +36,7 @@ export default function Paragraph({ paragraph }: { paragraph: string }) {
 
 function Word({ children, progress, range } : {children : string; progress :MotionValue<number>; range : number[]; }) {
   const opacity = useTransform(progress, range, [0, 1]);
-  return <span className="relative mr-[8px] mt-[11px]">
+  return <span className="relative lg:mr-[8px] md:mr-[8px] mr-[5px] mt-[11px]">
     <span className="absolute opacity-[20%]">{children}</span>
     <motion.span style={{opacity : opacity}}>{children}</motion.span>
   </span>;

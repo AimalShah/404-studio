@@ -47,7 +47,7 @@ export default function Navbar() {
               duration: 1,
             },
           }}
-          className="py-4 px-8 flex justify-between items-center fixed top-0 w-full z-50"
+          className="py-4 lg:px-8 md:px-8 px-4 flex justify-between items-center fixed top-0 w-full z-50"
         >
           <div className="w-fit p-1 bg-white/50 rounded-2xl shadow-2xl cursor-pointer">
             <h1 className="font-bold flex gap-2 items-center bg-white rounded-2xl p-2">

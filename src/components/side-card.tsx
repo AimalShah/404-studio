@@ -31,8 +31,7 @@ export default function SideCard({
     }}
       drag
       dragConstraints={constraintsRef}
-      dragElastic={0.1} // adds a little resistance
-    //   dragTransition={{ bounceStiffness: 100, bounceDamping: 15 }} // smooth snap-back
+      dragElastic={0.1} 
       onDragStart={() => setIsDragging(true)}
       onDragEnd={(event, info) => {
         setIsDragging(false);

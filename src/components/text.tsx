@@ -37,7 +37,7 @@ export default function HeroText({ text , type }: { text: string; type : "black"
       className="inline-block overflow-hidden"
     >
       {text.split("").map((letterChar, index) => (
-        <motion.span key={index} variants={letter} className={`inline-block text-7xl ${type === "black" && "font-extrabold"} ${type === "gray" && "text-gray-400"} ${type === "black-thin" && "font-semibold"}`}>
+        <motion.span key={index} variants={letter} className={`inline-block text-5xl md:text-7xl lg:text-8xl ${type === "black" && "font-extrabold"} ${type === "gray" && "text-gray-400"} ${type === "black-thin" && "font-semibold"}`}>
           {letterChar === " " ? "\u00A0" : letterChar}
         </motion.span>
       ))}
