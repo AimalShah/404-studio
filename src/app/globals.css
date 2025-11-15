@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
-@layer {
+
+@theme inline{
+  --font-body: var(--font-roboto);
+  --font-heading: var(--font-instrument) !important;
+  --font-poppins: var(--font-poppin);
+}
+
+@layer base {
   body {
-    background: #fdfdfd;
-    background: linear-gradient(
+    /* background: linear-gradient(
       28deg,
       rgba(253, 253, 253, 1) 12%,
       rgba(231, 231, 231, 1) 25%,
@@ -12,9 +18,13 @@
       rgba(229, 229, 229, 1) 50%,
       rgba(229, 229, 229, 1) 61%,
       rgba(229, 229, 229, 1) 76%
-    );
+    ); */
+    @apply bg-[#d9d9d9] font-body;
   }
 }
+
+
+
 html.lenis {
   height: auto;
 }

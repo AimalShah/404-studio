@@ -122,7 +122,7 @@ export function Heading({ text }: { text: string }) {
             "linear-gradient(90deg, #54545400 0%, #00000080, #00000080 100%)",
         }}
       ></div>
-      <h1 className="italic text-[#545454] text-lg">{text}</h1>
+      <h1 className="italic text-[#545454] text-2xl font-heading">{text}</h1>
       <div
         className="w-[69px] h-[1px]"
         style={{
