@@ -112,22 +112,22 @@ export default function Intro() {
   );
 }
 
-export function Heading({ text }: { text: string }) {
+export function Heading({ text,className, fontClass }: { text: string, className? : string; fontClass? : string}) {
   return (
-    <div className="relative flex items-center gap-2 justify-center">
+    <div className={`relative flex items-center gap-2 justify-center ${className}`} >
       <div
         className="w-[69px] h-[1px]"
         style={{
           background:
-            "linear-gradient(90deg, #54545400 0%, #00000080, #00000080 100%)",
+            "linear-gradient(90deg, #54545400 0%, #545454, #545454 100%)",
         }}
       ></div>
-      <h1 className="italic text-[#545454] text-2xl font-heading">{text}</h1>
+      <h1 className={`italic text-[#545454] text-2xl  font-heading `}>{text}</h1>
       <div
         className="w-[69px] h-[1px]"
         style={{
           background:
-            "linear-gradient(270deg, #54545400 0%, #00000080, #00000080 100%)",
+            "linear-gradient(270deg, #54545400 0%, #545454, #545454 100%)",
         }}
       />
     </div>

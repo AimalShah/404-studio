@@ -3,6 +3,7 @@ import {Roboto, Instrument_Serif, Poppins} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import SmoothScrollProvider from "@/components/smooth-scroll-provider";
+import Footer from "@/components/footer";
 
 const roboto = Roboto({
    subsets: ['latin'],
@@ -41,11 +42,12 @@ export default function RootLayout({
       </head>
       <SmoothScrollProvider>
         <body
-          className={`${roboto.variable} ${instrument_serif.variable} ${poppins.variable}  antialiased`}
+          className={`${roboto.variable} ${instrument_serif.variable} ${poppins.variable}  antialiased bg-[#D9D9D9]`}
           cz-shortcut-listen="true"
         >
           <Navbar />
           {children}
+          <Footer/>
         </body>
       </SmoothScrollProvider>
     </html>
